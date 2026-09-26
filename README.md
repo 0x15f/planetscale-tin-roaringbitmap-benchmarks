@@ -59,7 +59,7 @@ Runs save environment and dataset manifests, source snapshots, SQL and parameter
 .venv/bin/python -m harness.report results/RUN_ID
 ```
 
-[Preliminary findings](docs/plan-findings.md) contain the results available so far. Packaging writes the final report to `docs/planetscale-report.md` after the runs and audits finish.
+The full benchmark is complete. Read the [benchmark report](docs/planetscale-report.md) for results, the [plan findings](docs/plan-findings.md) for individual plan comparisons, and [limitations](docs/limitations.md) for scope. The standard run and follow-ups collected 232,000 measured executions; the corrected smoke run adds 2,000.
 
 ## Local checks
 

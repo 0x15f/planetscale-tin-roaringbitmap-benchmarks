@@ -1,6 +1,6 @@
-# Preliminary findings
+# Plan findings
 
-The standard run and follow-up experiments are still in progress. Timings below identify completed comparisons or individual EXPLAIN observations.
+The standard run and all follow-up experiments are complete. See the [benchmark report](planetscale-report.md) for the full results. Timings below distinguish measured latency distributions from individual EXPLAIN observations.
 
 ## Initial 10,000-document plans
 
@@ -32,7 +32,7 @@ On 100,000 rows, medium text and identical 50% clustered eligibility, k=30, full
 | Scalar ID range | 15.826 | 20.760 | 25.586 | 0.277 | 30 |
 | Stored bitmap join | 87.723 | 97.156 | 111.135 | 74.585 | 20,079 |
 
-Client medians differ by approximately 5.5x. The scalar plan explicitly exposes `Top K: 30` and `Candidate Filter: Parent Projector`; the joined bitmap plan emits the full text-match stream. These are observations about these SQL shapes, not proof that TIN lacks all external-eligibility support. A direct bound-bitmap comparison and representation controls are queued before final conclusions.
+Client medians differ by approximately 5.5x. The scalar plan explicitly exposes `Top K: 30` and `Candidate Filter: Parent Projector`; the joined bitmap plan emits the full text-match stream. These are observations about these SQL shapes, not proof that TIN lacks all external-eligibility support. The completed controls found lower latency for some bound and optimized bitmaps, but every ranked control still emitted all text matches before filtering. See the report for storage sizes, plans, and timings.
 
 Plans: [scalar](../results/standard_20260926_154236/plans/q0005.json), [bitmap](../results/standard_20260926_154236/plans/q0006.json). Raw samples: [measurements.jsonl](../results/standard_20260926_154236/measurements.jsonl). Server times are individual instrumented observations, not server latency percentiles.
 

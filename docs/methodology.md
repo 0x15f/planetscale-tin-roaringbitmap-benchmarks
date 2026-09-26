@@ -33,9 +33,22 @@ Each case receives five warmups. Smoke cases have 20 measured executions; standa
 
 Client latency uses a monotonic clock around execute/fetch, excluding validation, artifact writes, and EXPLAIN. SELECT 1 round-trip samples are recorded. Percentiles use linear interpolation at `(n-1)*p`.
 
-Server planning, execution, and first-row times come from a separate EXPLAIN. Buffer totals use the root node to avoid counting nested nodes twice. Removed-row counts sum node removals weighted by loops, excluding eligibility-set name selection. TIN-specific estimates remain in the raw plans.
+Server planning, execution, and first-row times come from a separate EXPLAIN. Buffer totals use the root node to avoid counting nested nodes twice. Removed-row counts sum node removals weighted by loops, excluding eligibility-set name selection. TIN-specific estimates remain in the raw plans. Total TIN output is computed from rows per loop multiplied by loops; rounded per-loop values can make that total approximate.
 
 Connections use PgBouncer transaction pooling on port 6432 with automatic prepared statements disabled. Explicit transactions pin sessions; settings use `SET LOCAL`, and temporary relations use `ON COMMIT DROP`. The [PlanetScale pooling reference](https://raw.githubusercontent.com/planetscale/database-skills/main/skills/postgres/references/ps-connection-pooling.md) documents this port as transaction pooling. A direct-port test would be a separate experiment.
+
+## Plan labels
+
+The classifier uses visible plan structure:
+
+| Label | Meaning |
+|---|---|
+| N/A | Native baseline without external eligibility |
+| P1 | Membership filter above TIN, or a hash/merge join with TIN output |
+| P3 | BitmapAnd, or a TIN conjunction with an index TID probe/scan |
+| P5 | No recognized pattern; inspect the raw plan and candidate-filter field |
+
+These are conservative heuristic labels. P5 does not mean a plan is inefficient. No observed plan is labeled P4 (direct consumption of external bitmap eligibility inside TIN).
 
 ## Logical IDs and CTIDs
 
