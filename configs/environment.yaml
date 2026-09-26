@@ -1,0 +1,10 @@
+# Verified environment for this dedicated target. Update for another cluster.
+database_region: us-east-1
+cluster: M-160 x86-64
+vcpus: 2
+memory_gb: 16
+replicas: 2
+client_region: New York City, New York, USA
+metadata_source: verified by benchmark owner
+database_role: dedicated benchmark database, branch label production; confirmed by user
+connection_pooling: PgBouncer transaction pooling on port 6432
