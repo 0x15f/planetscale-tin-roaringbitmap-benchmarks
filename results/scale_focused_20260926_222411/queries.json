@@ -1,0 +1,314 @@
+[
+  {
+    "id": "q0000",
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 10000,
+    "eligible_matches": 799749,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0001",
+    "family": "scalar",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 10000,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      1099511637776,
+      30
+    ]
+  },
+  {
+    "id": "q0002",
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 10000,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.01",
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0003",
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 10000,
+    "eligible_matches": 8015,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.01",
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0004",
+    "family": "count_native",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 10000,
+    "eligible_matches": 799749,
+    "sql": "SELECT count(*) FROM documents d WHERE d.search_text ==> %s",
+    "params": [
+      "common"
+    ]
+  },
+  {
+    "id": "q0005",
+    "family": "count_bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 10000,
+    "eligible_matches": 8015,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "clustered_0.01",
+      "common"
+    ]
+  },
+  {
+    "id": "q0006",
+    "family": "id_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "translation_setup_ms": 70.151125,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 10000,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0007",
+    "family": "ctid_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "translation_setup_ms": 70.148958,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 10000,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.ctid=e.tid WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0008",
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 1000,
+    "eligible_matches": 799749,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0009",
+    "family": "scalar",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      1099511628776,
+      30
+    ]
+  },
+  {
+    "id": "q0010",
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.001",
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0011",
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.001",
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0012",
+    "family": "count_native",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 1000,
+    "eligible_matches": 799749,
+    "sql": "SELECT count(*) FROM documents d WHERE d.search_text ==> %s",
+    "params": [
+      "common"
+    ]
+  },
+  {
+    "id": "q0013",
+    "family": "count_bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "clustered_0.001",
+      "common"
+    ]
+  },
+  {
+    "id": "q0014",
+    "family": "id_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "translation_setup_ms": 65.081208,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "id": "q0015",
+    "family": "ctid_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "translation_setup_ms": 63.405167,
+    "table_rows": 1000000,
+    "text_matches": 799749,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.ctid=e.tid WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  }
+]

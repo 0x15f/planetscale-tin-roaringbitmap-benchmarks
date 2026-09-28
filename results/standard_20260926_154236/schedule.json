@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-26T16:09:38.182238+00:00",
+  "standard": "results/standard_20260926_154236",
+  "stages": [
+    {
+      "module": "harness.bitmap_control",
+      "finished_at": "2026-09-26T22:22:45.246566+00:00",
+      "artifacts": [
+        "results/bitmap_control_20260926_221423"
+      ]
+    },
+    {
+      "module": "harness.concurrency",
+      "finished_at": "2026-09-26T22:24:11.012417+00:00",
+      "artifacts": [
+        "results/concurrency_20260926_222245"
+      ]
+    },
+    {
+      "module": "harness.focused_scale",
+      "finished_at": "2026-09-26T22:43:52.784837+00:00",
+      "artifacts": [
+        "results/scale_focused_20260926_222411"
+      ]
+    },
+    {
+      "module": "harness.package_report",
+      "finished_at": "2026-09-26T22:43:54.297799+00:00",
+      "artifacts": []
+    }
+  ],
+  "finished_at": "2026-09-26T22:43:54.298050+00:00"
+}

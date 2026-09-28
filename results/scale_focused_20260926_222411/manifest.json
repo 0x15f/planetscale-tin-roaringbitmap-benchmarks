@@ -1,0 +1,12 @@
+{
+  "run_id": "scale_focused_20260926_222411",
+  "status": "complete",
+  "config": {
+    "rows": 1000000,
+    "warmups": 5,
+    "repetitions": 100,
+    "headline_repetitions": 100
+  },
+  "source_standard": "results/standard_20260926_154236",
+  "scope": "Focused scale confirmation; no 5,000-observation tail claims"
+}

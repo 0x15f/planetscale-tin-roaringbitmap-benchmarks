@@ -1,0 +1,38 @@
+[
+  {
+    "id": "native",
+    "family": "native",
+    "term": "common",
+    "text": "broad",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full"
+  },
+  {
+    "id": "scalar",
+    "family": "scalar",
+    "term": "common",
+    "text": "broad",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full"
+  },
+  {
+    "id": "bitmap",
+    "family": "bitmap",
+    "term": "common",
+    "text": "broad",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full"
+  },
+  {
+    "id": "enumeration",
+    "family": "enumeration",
+    "term": "common",
+    "text": "broad",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "run": "concurrency_20260926_222245",
+  "audit": "passed",
+  "cells": 8,
+  "observations": 8000,
+  "checks": [
+    "unique client/iteration samples",
+    "full repetition counts",
+    "all recorded correctness checks passed",
+    "finite positive latencies",
+    "summary counts match raw data"
+  ]
+}

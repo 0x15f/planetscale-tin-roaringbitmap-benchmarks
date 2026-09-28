@@ -1,0 +1,22 @@
+{
+  "source_commit": "391a3f9",
+  "verified_at": "2026-09-26T22:45:48.860264+00:00",
+  "note": "Follow-up harness sources match the committed files present before these runs started. Final report generation has a separate analysis manifest.",
+  "source_sha256": {
+    "harness/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "harness/audit.py": "ce7629c53cf67ac28b6328ae9e1da065a4df4efd3c11bee186b4655e9ab3b895",
+    "harness/benchmark.py": "d427fb4aeb9fe6f0f5850bc6608ee56d96b4135945cd19cb7e79fbf2ff08b416",
+    "harness/bitmap_control.py": "96aada73210772eeffd2362fa4a88c964ea57e9ad0e981f8cac8a45c3e3dc5a5",
+    "harness/concurrency.py": "2d15af19538da1776b64a48342dbe39532c9f658ebdb4d3e506a2d71ff849fc5",
+    "harness/db.py": "efb72407c7f2915024a3a540342ff17a1412b5b8352ce991dc543bd9a752fe9f",
+    "harness/environment.py": "32a63597d2295ed5861473ef1de93f7a4ba85bcd960784fe1dd61f665b131e12",
+    "harness/explain.py": "3ddc8b170b43c1e0d8521e771353fb9abf1073a4c0572280a39adfbd97922e1c",
+    "harness/focused_scale.py": "96ca4b95059640dff77c3b2a75020f540207f11afa7f4fe1c1e0baf489813311",
+    "harness/generate.py": "0c979b8b645414e6267ef3ab752b49e12e2b34423a7f01d1cc318317025979fb",
+    "harness/load.py": "ec608fc805748275c7d39101f3235fcb6b360ca77162f3137d4e934675c51b94",
+    "harness/queries.py": "9a9eb9e3caffa5144d5975918463488c7784734a22b2028037565c6e0c20b45a",
+    "harness/report.py": "2abed62d28f65f041c4415fae73f082ea0258142a70efcdbdc6368c6cb1c9290",
+    "harness/validate.py": "c6717249574097481f9b626907c8bc53fe28e63bfadb9543c920aeaedb982eaf",
+    "harness/verify_fixtures.py": "163eec6ae532818649ffe4f2659c6d1566060c31db7e3dfd51476f675153ef7c"
+  }
+}

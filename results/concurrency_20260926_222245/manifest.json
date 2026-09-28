@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "source_run": "results/standard_20260926_154236",
+  "repetitions_per_worker": 100,
+  "clients": [
+    4,
+    16
+  ],
+  "mode": "closed loop; per-family barrier after warmup; no think time",
+  "limitation": "Tail percentiles descriptive; not 5,000 observations per cell"
+}

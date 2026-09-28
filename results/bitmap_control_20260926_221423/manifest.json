@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "config": {
+    "rows": 100000,
+    "warmups": 5,
+    "repetitions": 100,
+    "headline_repetitions": 100
+  },
+  "source_run": "results/standard_20260926_154236",
+  "purpose": "Paired raw versus rb64_runoptimize bitmap representation; identical members"
+}

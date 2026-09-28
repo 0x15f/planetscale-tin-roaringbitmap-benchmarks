@@ -1,0 +1,210 @@
+{
+  "rows": 10000,
+  "seed": 20260926,
+  "sha256": "ffb546ab3c643f02c872bffd342d7eb17db3d006d5734cf7ef722dcd31d19a71",
+  "schema": "smoke_20260926_154056",
+  "eligibility_sets": {
+    "random_1": {
+      "kind": "random",
+      "fraction": 1,
+      "members": 10000
+    },
+    "clustered_1": {
+      "kind": "clustered",
+      "fraction": 1,
+      "members": 10000
+    },
+    "positive_1": {
+      "kind": "positive",
+      "fraction": 1,
+      "members": 10000
+    },
+    "negative_1": {
+      "kind": "negative",
+      "fraction": 1,
+      "members": 10000
+    },
+    "random_0.75": {
+      "kind": "random",
+      "fraction": 0.75,
+      "members": 7500
+    },
+    "clustered_0.75": {
+      "kind": "clustered",
+      "fraction": 0.75,
+      "members": 7500
+    },
+    "positive_0.75": {
+      "kind": "positive",
+      "fraction": 0.75,
+      "members": 7500
+    },
+    "negative_0.75": {
+      "kind": "negative",
+      "fraction": 0.75,
+      "members": 7500
+    },
+    "random_0.5": {
+      "kind": "random",
+      "fraction": 0.5,
+      "members": 5000
+    },
+    "clustered_0.5": {
+      "kind": "clustered",
+      "fraction": 0.5,
+      "members": 5000
+    },
+    "positive_0.5": {
+      "kind": "positive",
+      "fraction": 0.5,
+      "members": 5000
+    },
+    "negative_0.5": {
+      "kind": "negative",
+      "fraction": 0.5,
+      "members": 5000
+    },
+    "random_0.25": {
+      "kind": "random",
+      "fraction": 0.25,
+      "members": 2500
+    },
+    "clustered_0.25": {
+      "kind": "clustered",
+      "fraction": 0.25,
+      "members": 2500
+    },
+    "positive_0.25": {
+      "kind": "positive",
+      "fraction": 0.25,
+      "members": 2500
+    },
+    "negative_0.25": {
+      "kind": "negative",
+      "fraction": 0.25,
+      "members": 2500
+    },
+    "random_0.1": {
+      "kind": "random",
+      "fraction": 0.1,
+      "members": 1000
+    },
+    "clustered_0.1": {
+      "kind": "clustered",
+      "fraction": 0.1,
+      "members": 1000
+    },
+    "positive_0.1": {
+      "kind": "positive",
+      "fraction": 0.1,
+      "members": 1000
+    },
+    "negative_0.1": {
+      "kind": "negative",
+      "fraction": 0.1,
+      "members": 1000
+    },
+    "random_0.05": {
+      "kind": "random",
+      "fraction": 0.05,
+      "members": 500
+    },
+    "clustered_0.05": {
+      "kind": "clustered",
+      "fraction": 0.05,
+      "members": 500
+    },
+    "positive_0.05": {
+      "kind": "positive",
+      "fraction": 0.05,
+      "members": 500
+    },
+    "negative_0.05": {
+      "kind": "negative",
+      "fraction": 0.05,
+      "members": 500
+    },
+    "random_0.01": {
+      "kind": "random",
+      "fraction": 0.01,
+      "members": 100
+    },
+    "clustered_0.01": {
+      "kind": "clustered",
+      "fraction": 0.01,
+      "members": 100
+    },
+    "positive_0.01": {
+      "kind": "positive",
+      "fraction": 0.01,
+      "members": 100
+    },
+    "negative_0.01": {
+      "kind": "negative",
+      "fraction": 0.01,
+      "members": 100
+    },
+    "random_0.001": {
+      "kind": "random",
+      "fraction": 0.001,
+      "members": 10
+    },
+    "clustered_0.001": {
+      "kind": "clustered",
+      "fraction": 0.001,
+      "members": 10
+    },
+    "positive_0.001": {
+      "kind": "positive",
+      "fraction": 0.001,
+      "members": 10
+    },
+    "negative_0.001": {
+      "kind": "negative",
+      "fraction": 0.001,
+      "members": 10
+    },
+    "random_0": {
+      "kind": "random",
+      "fraction": 0,
+      "members": 0
+    },
+    "clustered_0": {
+      "kind": "clustered",
+      "fraction": 0,
+      "members": 0
+    },
+    "positive_0": {
+      "kind": "positive",
+      "fraction": 0,
+      "members": 0
+    },
+    "negative_0": {
+      "kind": "negative",
+      "fraction": 0,
+      "members": 0
+    },
+    "tenant": {
+      "kind": "tenant",
+      "members": 100
+    },
+    "channel": {
+      "kind": "channel",
+      "members": 2500
+    },
+    "category": {
+      "kind": "category",
+      "members": 500
+    },
+    "active": {
+      "kind": "active",
+      "members": 8000
+    },
+    "combined": {
+      "kind": "combined",
+      "members": 0
+    }
+  },
+  "logical_id_start": 1099511627776,
+  "logical_id_end": 1099511637775
+}

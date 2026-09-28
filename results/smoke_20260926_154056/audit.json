@@ -1,0 +1,8 @@
+{
+  "run": "smoke_20260926_154056",
+  "cells": 100,
+  "observations": 2000,
+  "audit": "passed",
+  "unique_iterations": true,
+  "finite_positive_latencies": true
+}

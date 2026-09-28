@@ -1,0 +1,8 @@
+{
+  "run": "bitmap_control_20260926_221423",
+  "cells": 48,
+  "observations": 4800,
+  "audit": "passed",
+  "unique_iterations": true,
+  "finite_positive_latencies": true
+}

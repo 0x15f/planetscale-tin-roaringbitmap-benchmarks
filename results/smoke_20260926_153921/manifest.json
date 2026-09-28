@@ -1,0 +1,28 @@
+{
+  "run_id": "smoke_20260926_153921",
+  "profile": "smoke",
+  "config": {
+    "rows": 10000,
+    "warmups": 5,
+    "repetitions": 20,
+    "headline_repetitions": 20
+  },
+  "status": "superseded",
+  "started_at": "2026-09-26T15:39:21.749880+00:00",
+  "source_sha256": {
+    "harness/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "harness/benchmark.py": "29c1a0497d9d2fd072248652c71b7aea62cd05149bbc8994593fd54d9c803cdd",
+    "harness/db.py": "efb72407c7f2915024a3a540342ff17a1412b5b8352ce991dc543bd9a752fe9f",
+    "harness/discover.py": "e81965258ef52e27e2f7472c70ebbe63b50fa009b6dc4a8f319496b451a66a2a",
+    "harness/enable.py": "50cc29788dc2ca6b27f9a2c5089ac3f4a672fc3afaaab78e2e49901ab67c7419",
+    "harness/explain.py": "85633236f27c8b9d46a3697eb81520edc5c7a4ddc7c619756d871d3cfd1435f2",
+    "harness/generate.py": "0c979b8b645414e6267ef3ab752b49e12e2b34423a7f01d1cc318317025979fb",
+    "harness/load.py": "ec608fc805748275c7d39101f3235fcb6b360ca77162f3137d4e934675c51b94",
+    "harness/m1.py": "b5e5a3ef2ffbd29afa71dbe9e35034d74ef17515e52d9fa3e84a9cf0124598c8",
+    "harness/queries.py": "e5323083c54728a47350ee96dbc00691754fcedefbb318cb5b1db5ab7da553e6",
+    "harness/report.py": "ec55070cffde14b2f9756f56b093278c5ff51881897b9abf5bfe6daf4e2ce33b",
+    "harness/validate.py": "c6717249574097481f9b626907c8bc53fe28e63bfadb9543c920aeaedb982eaf"
+  },
+  "finished_at": "2026-09-26T15:40:42.244079+00:00",
+  "reason": "Smoke selector duplicated a cell reference and query ID. Excluded from findings; corrected run replaces it."
+}

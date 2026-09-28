@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-09-26T22:46:30.433320+00:00",
+  "source_sha256": {
+    "harness/report.py": "2abed62d28f65f041c4415fae73f082ea0258142a70efcdbdc6368c6cb1c9290",
+    "harness/explain.py": "3ddc8b170b43c1e0d8521e771353fb9abf1073a4c0572280a39adfbd97922e1c",
+    "harness/package_report.py": "213880e06b36cf0da7a1c4270df595e6c10e9c38af64ef5d3338000b11574b6a"
+  },
+  "note": "Raw plans retain capture-time labels; CSV/report classifications are recomputed from preserved plan structure."
+}

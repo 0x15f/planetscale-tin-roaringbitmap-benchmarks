@@ -1,0 +1,8 @@
+{
+  "run": "standard_20260926_154236",
+  "cells": 1000,
+  "observations": 217600,
+  "audit": "passed",
+  "unique_iterations": true,
+  "finite_positive_latencies": true
+}

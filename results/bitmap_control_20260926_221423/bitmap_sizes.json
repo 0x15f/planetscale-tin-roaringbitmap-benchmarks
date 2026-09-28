@@ -1,0 +1,110 @@
+[
+  {
+    "set": "random_0.5",
+    "variant": "raw",
+    "members": 50000,
+    "stored_bytes": 16420,
+    "compression": null,
+    "out_of_line": true,
+    "setup_ms": 18.03275
+  },
+  {
+    "set": "random_0.5",
+    "variant": "optimized",
+    "members": 50000,
+    "stored_bytes": 16420,
+    "compression": null,
+    "out_of_line": true,
+    "setup_ms": 15.548333
+  },
+  {
+    "set": "random_0.01",
+    "variant": "raw",
+    "members": 1000,
+    "stored_bytes": 2036,
+    "compression": null,
+    "out_of_line": true,
+    "setup_ms": 15.707542
+  },
+  {
+    "set": "random_0.01",
+    "variant": "optimized",
+    "members": 1000,
+    "stored_bytes": 2036,
+    "compression": null,
+    "out_of_line": true,
+    "setup_ms": 15.006625
+  },
+  {
+    "set": "random_0.001",
+    "variant": "raw",
+    "members": 100,
+    "stored_bytes": 240,
+    "compression": null,
+    "out_of_line": false,
+    "setup_ms": 13.040667
+  },
+  {
+    "set": "random_0.001",
+    "variant": "optimized",
+    "members": 100,
+    "stored_bytes": 240,
+    "compression": null,
+    "out_of_line": false,
+    "setup_ms": 16.597291
+  },
+  {
+    "set": "clustered_0.5",
+    "variant": "raw",
+    "members": 50000,
+    "stored_bytes": 8220,
+    "compression": null,
+    "out_of_line": true,
+    "setup_ms": 16.926
+  },
+  {
+    "set": "clustered_0.5",
+    "variant": "optimized",
+    "members": 50000,
+    "stored_bytes": 28,
+    "compression": null,
+    "out_of_line": false,
+    "setup_ms": 13.936708
+  },
+  {
+    "set": "clustered_0.01",
+    "variant": "raw",
+    "members": 1000,
+    "stored_bytes": 2028,
+    "compression": null,
+    "out_of_line": true,
+    "setup_ms": 15.773
+  },
+  {
+    "set": "clustered_0.01",
+    "variant": "optimized",
+    "members": 1000,
+    "stored_bytes": 28,
+    "compression": null,
+    "out_of_line": false,
+    "setup_ms": 15.276292
+  },
+  {
+    "set": "clustered_0.001",
+    "variant": "raw",
+    "members": 100,
+    "stored_bytes": 232,
+    "compression": null,
+    "out_of_line": false,
+    "setup_ms": 14.100167
+  },
+  {
+    "set": "clustered_0.001",
+    "variant": "optimized",
+    "members": 100,
+    "stored_bytes": 28,
+    "compression": null,
+    "out_of_line": false,
+    "setup_ms": 13.586291
+  }
+]

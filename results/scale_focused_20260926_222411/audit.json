@@ -1,0 +1,8 @@
+{
+  "run": "scale_focused_20260926_222411",
+  "cells": 16,
+  "observations": 1600,
+  "audit": "passed",
+  "unique_iterations": true,
+  "finite_positive_latencies": true
+}

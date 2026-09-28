@@ -1,0 +1,1974 @@
+[
+  {
+    "family": "native",
+    "text": "rare",
+    "term": "rare",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0000",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 5000,
+    "eligible_matches": 53,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "scalar",
+    "text": "rare",
+    "term": "rare",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0001",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 5000,
+    "eligible_matches": 28,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      1099511632776,
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0002",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 5000,
+    "eligible_matches": 28,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.5",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "rare",
+    "term": "rare",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0003",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 5000,
+    "eligible_matches": 28,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.5",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "native",
+    "text": "medium",
+    "term": "medium",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0004",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 5000,
+    "eligible_matches": 1964,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "medium",
+      30
+    ]
+  },
+  {
+    "family": "scalar",
+    "text": "medium",
+    "term": "medium",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0005",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 5000,
+    "eligible_matches": 968,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "medium",
+      1099511632776,
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "medium",
+    "term": "medium",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0006",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 5000,
+    "eligible_matches": 968,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.5",
+      "medium",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "medium",
+    "term": "medium",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0007",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 5000,
+    "eligible_matches": 968,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.5",
+      "medium",
+      30
+    ]
+  },
+  {
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0008",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "scalar",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0009",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 3994,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      1099511632776,
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0010",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 3994,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.5",
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0011",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 3994,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.5",
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.1",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0012",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 1000,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "scalar",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.1",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0013",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      1099511628776,
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.1",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0014",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.1",
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.1",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0015",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 1000,
+    "eligible_matches": 796,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.1",
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0016",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "scalar",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0017",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 80,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      1099511627876,
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0018",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 80,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.01",
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0019",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 80,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.01",
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0020",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "scalar",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0021",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 9,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      1099511627786,
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0022",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 9,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.001",
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "clustered_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": true,
+    "id": "q0023",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 9,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "clustered_0.001",
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0024",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 10000,
+    "eligible_matches": 53,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      "random_1",
+      30
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.75",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0025",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 7500,
+    "eligible_matches": 40,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      "random_0.75",
+      30
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0026",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 5000,
+    "eligible_matches": 27,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      "random_0.5",
+      30
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.25",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0027",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 2500,
+    "eligible_matches": 15,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      "random_0.25",
+      30
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0028",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 1000,
+    "eligible_matches": 8,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      "random_0.1",
+      30
+    ]
+  },
+  {
+    "family": "count_native",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0029",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 10000,
+    "eligible_matches": 53,
+    "sql": "SELECT count(*) FROM documents d WHERE d.search_text ==> %s",
+    "params": [
+      "rare"
+    ]
+  },
+  {
+    "family": "count_native",
+    "text": "medium",
+    "term": "medium",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0030",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 10000,
+    "eligible_matches": 1964,
+    "sql": "SELECT count(*) FROM documents d WHERE d.search_text ==> %s",
+    "params": [
+      "medium"
+    ]
+  },
+  {
+    "family": "count_native",
+    "text": "broad",
+    "term": "common",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0031",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10000,
+    "eligible_matches": 8015,
+    "sql": "SELECT count(*) FROM documents d WHERE d.search_text ==> %s",
+    "params": [
+      "common"
+    ]
+  },
+  {
+    "family": "count_native",
+    "text": "and",
+    "term": "common AND blue",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0032",
+    "table_rows": 10000,
+    "text_matches": 2683,
+    "bitmap_members": 10000,
+    "eligible_matches": 2683,
+    "sql": "SELECT count(*) FROM documents d WHERE d.search_text ==> %s",
+    "params": [
+      "common AND blue"
+    ]
+  },
+  {
+    "family": "count_native",
+    "text": "or",
+    "term": "rare OR medium",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0062",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 10000,
+    "eligible_matches": 1964,
+    "sql": "SELECT count(*) FROM documents d WHERE d.search_text ==> %s",
+    "params": [
+      "rare OR medium"
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0034",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 10000,
+    "eligible_matches": 53,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_1",
+      "rare"
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.75",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0035",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 7500,
+    "eligible_matches": 40,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0.75",
+      "rare"
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0036",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 5000,
+    "eligible_matches": 27,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0.5",
+      "rare"
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.25",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0037",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 2500,
+    "eligible_matches": 15,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0.25",
+      "rare"
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0038",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 1000,
+    "eligible_matches": 8,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0.1",
+      "rare"
+    ]
+  },
+  {
+    "family": "scalar_scope",
+    "text": "broad",
+    "term": "common",
+    "set": "tenant",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0039",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 73,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.tenant_id=0 ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "scalar_scope",
+    "text": "rare",
+    "term": "rare",
+    "set": "tenant",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0040",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 100,
+    "eligible_matches": 0,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.tenant_id=0 ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "scalar_scope",
+    "text": "broad",
+    "term": "common",
+    "set": "channel",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0041",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 2500,
+    "eligible_matches": 2027,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.channel=0 ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "scalar_scope",
+    "text": "rare",
+    "term": "rare",
+    "set": "channel",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0042",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 2500,
+    "eligible_matches": 13,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.channel=0 ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "scalar_scope",
+    "text": "broad",
+    "term": "common",
+    "set": "category",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0043",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 500,
+    "eligible_matches": 407,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.category_id=0 ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "id_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0044",
+    "translation_setup_ms": 87.912875,
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "id_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.1",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0045",
+    "translation_setup_ms": 91.816583,
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 1000,
+    "eligible_matches": 798,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "id_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0046",
+    "translation_setup_ms": 77.052042,
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 82,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "id_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0047",
+    "translation_setup_ms": 60.506042,
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 9,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "ctid_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0048",
+    "translation_setup_ms": 101.234208,
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.ctid=e.tid WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "ctid_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.1",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0049",
+    "translation_setup_ms": 99.182542,
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 1000,
+    "eligible_matches": 798,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.ctid=e.tid WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "ctid_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0050",
+    "translation_setup_ms": 62.840916,
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 82,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.ctid=e.tid WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "ctid_relation",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0051",
+    "translation_setup_ms": 61.033125,
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 9,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible_relation e JOIN documents d ON d.ctid=e.tid WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      30
+    ]
+  },
+  {
+    "family": "oversample",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "budget": 30,
+    "id": "q0052",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "WITH candidates AS MATERIALIZED (SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s) SELECT c.id,c.score FROM candidates c CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND e.members @> c.id ORDER BY c.score DESC LIMIT %s",
+    "params": [
+      "common",
+      30,
+      "random_0.5",
+      30
+    ]
+  },
+  {
+    "family": "oversample",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "budget": 60,
+    "id": "q0053",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "WITH candidates AS MATERIALIZED (SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s) SELECT c.id,c.score FROM candidates c CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND e.members @> c.id ORDER BY c.score DESC LIMIT %s",
+    "params": [
+      "common",
+      60,
+      "random_0.5",
+      30
+    ]
+  },
+  {
+    "family": "oversample",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "budget": 120,
+    "id": "q0054",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "WITH candidates AS MATERIALIZED (SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s) SELECT c.id,c.score FROM candidates c CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND e.members @> c.id ORDER BY c.score DESC LIMIT %s",
+    "params": [
+      "common",
+      120,
+      "random_0.5",
+      30
+    ]
+  },
+  {
+    "family": "oversample",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "budget": 300,
+    "id": "q0055",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "WITH candidates AS MATERIALIZED (SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s) SELECT c.id,c.score FROM candidates c CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND e.members @> c.id ORDER BY c.score DESC LIMIT %s",
+    "params": [
+      "common",
+      300,
+      "random_0.5",
+      30
+    ]
+  },
+  {
+    "family": "oversample",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "budget": 600,
+    "id": "q0056",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "WITH candidates AS MATERIALIZED (SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s) SELECT c.id,c.score FROM candidates c CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND e.members @> c.id ORDER BY c.score DESC LIMIT %s",
+    "params": [
+      "common",
+      600,
+      "random_0.5",
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "and",
+    "term": "common AND blue",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0057",
+    "table_rows": 10000,
+    "text_matches": 2683,
+    "bitmap_members": 10000,
+    "eligible_matches": 2683,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_1",
+      "common AND blue",
+      30
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "and",
+    "term": "common AND blue",
+    "set": "random_0.25",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0058",
+    "table_rows": 10000,
+    "text_matches": 2683,
+    "bitmap_members": 2500,
+    "eligible_matches": 695,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0.25",
+      "common AND blue"
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "and",
+    "term": "common AND blue",
+    "set": "random_0.001",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0059",
+    "table_rows": 10000,
+    "text_matches": 2683,
+    "bitmap_members": 10,
+    "eligible_matches": 5,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common AND blue",
+      "random_0.001",
+      30
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "or",
+    "term": "rare OR medium",
+    "set": "random_0.75",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0060",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 7500,
+    "eligible_matches": 1491,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0.75",
+      "rare OR medium"
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "or",
+    "term": "rare OR medium",
+    "set": "random_0.05",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0061",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 500,
+    "eligible_matches": 106,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "rare OR medium",
+      "random_0.05",
+      30
+    ]
+  },
+  {
+    "family": "count_native",
+    "text": "or",
+    "term": "rare OR medium",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0062",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 10000,
+    "eligible_matches": 1964,
+    "sql": "SELECT count(*) FROM documents d WHERE d.search_text ==> %s",
+    "params": [
+      "rare OR medium"
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "phrase",
+    "term": "\"blue ocean\"",
+    "set": "random_0.25",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0063",
+    "table_rows": 10000,
+    "text_matches": 3334,
+    "bitmap_members": 2500,
+    "eligible_matches": 863,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "\"blue ocean\"",
+      "random_0.25",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "phrase",
+    "term": "\"blue ocean\"",
+    "set": "random_0.001",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0064",
+    "table_rows": 10000,
+    "text_matches": 3334,
+    "bitmap_members": 10,
+    "eligible_matches": 5,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.001",
+      "\"blue ocean\"",
+      30
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "prefix",
+    "term": "topi*",
+    "set": "random_0.75",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0065",
+    "table_rows": 10000,
+    "text_matches": 10000,
+    "bitmap_members": 7500,
+    "eligible_matches": 7500,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "topi*",
+      "random_0.75",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "prefix",
+    "term": "topi*",
+    "set": "random_0.05",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0066",
+    "table_rows": 10000,
+    "text_matches": 10000,
+    "bitmap_members": 500,
+    "eligible_matches": 500,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.05",
+      "topi*",
+      30
+    ]
+  },
+  {
+    "family": "native",
+    "text": "prefix",
+    "term": "topi*",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0067",
+    "table_rows": 10000,
+    "text_matches": 10000,
+    "bitmap_members": 10000,
+    "eligible_matches": 10000,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "topi*",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "and",
+    "term": "common AND blue",
+    "set": "random_0.25",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0068",
+    "table_rows": 10000,
+    "text_matches": 2683,
+    "bitmap_members": 2500,
+    "eligible_matches": 695,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.25",
+      "common AND blue",
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "and",
+    "term": "common AND blue",
+    "set": "random_0.001",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0069",
+    "table_rows": 10000,
+    "text_matches": 2683,
+    "bitmap_members": 10,
+    "eligible_matches": 5,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.001",
+      "common AND blue",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "or",
+    "term": "rare OR medium",
+    "set": "random_0.75",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0070",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 7500,
+    "eligible_matches": 1491,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.75",
+      "rare OR medium",
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "or",
+    "term": "rare OR medium",
+    "set": "random_0.05",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0071",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 500,
+    "eligible_matches": 106,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.05",
+      "rare OR medium",
+      30
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "or",
+    "term": "rare OR medium",
+    "set": "random_0",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0072",
+    "table_rows": 10000,
+    "text_matches": 1964,
+    "bitmap_members": 0,
+    "eligible_matches": 0,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0",
+      "rare OR medium"
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "phrase",
+    "term": "\"blue ocean\"",
+    "set": "random_0.25",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0073",
+    "table_rows": 10000,
+    "text_matches": 3334,
+    "bitmap_members": 2500,
+    "eligible_matches": 863,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.25",
+      "\"blue ocean\"",
+      30
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "phrase",
+    "term": "\"blue ocean\"",
+    "set": "random_0.01",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0074",
+    "table_rows": 10000,
+    "text_matches": 3334,
+    "bitmap_members": 100,
+    "eligible_matches": 41,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0.01",
+      "\"blue ocean\""
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "prefix",
+    "term": "topi*",
+    "set": "random_0.75",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0075",
+    "table_rows": 10000,
+    "text_matches": 10000,
+    "bitmap_members": 7500,
+    "eligible_matches": 7500,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.75",
+      "topi*",
+      30
+    ]
+  },
+  {
+    "family": "count_bitmap",
+    "text": "prefix",
+    "term": "topi*",
+    "set": "random_0.1",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0076",
+    "table_rows": 10000,
+    "text_matches": 10000,
+    "bitmap_members": 1000,
+    "eligible_matches": 1000,
+    "sql": "SELECT count(*) FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id",
+    "params": [
+      "random_0.1",
+      "topi*"
+    ]
+  },
+  {
+    "family": "subquery",
+    "text": "prefix",
+    "term": "topi*",
+    "set": "random_0",
+    "k": 30,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0077",
+    "table_rows": 10000,
+    "text_matches": 10000,
+    "bitmap_members": 0,
+    "eligible_matches": 0,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND (SELECT members FROM eligibility_sets WHERE set_name=%s) @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "topi*",
+      "random_0",
+      30
+    ]
+  },
+  {
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0078",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0079",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.5",
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0080",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.5",
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.01",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0081",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.01",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0082",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 82,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.01",
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.01",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0083",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 100,
+    "eligible_matches": 82,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.01",
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.001",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0084",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.001",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0085",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 9,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.001",
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.001",
+    "k": 10,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0086",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 10,
+    "eligible_matches": 9,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.001",
+      "common",
+      10
+    ]
+  },
+  {
+    "family": "native",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 100,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0087",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 8015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "common",
+      100
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 100,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0088",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.5",
+      "common",
+      100
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "broad",
+    "term": "common",
+    "set": "random_0.5",
+    "k": 100,
+    "scoring": "full",
+    "headline": false,
+    "id": "q0089",
+    "table_rows": 10000,
+    "text_matches": 8015,
+    "bitmap_members": 5000,
+    "eligible_matches": 4015,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.full_score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.5",
+      "common",
+      100
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0090",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 10000,
+    "eligible_matches": 53,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_1",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0091",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 10000,
+    "eligible_matches": 53,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_1",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.75",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0092",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 7500,
+    "eligible_matches": 40,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.75",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.75",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0093",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 7500,
+    "eligible_matches": 40,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.75",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0094",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 5000,
+    "eligible_matches": 27,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.5",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.5",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0095",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 5000,
+    "eligible_matches": 27,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.5",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.25",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0096",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 2500,
+    "eligible_matches": 15,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.25",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.25",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0097",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 2500,
+    "eligible_matches": 15,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.25",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "bitmap",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0098",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 1000,
+    "eligible_matches": 8,
+    "sql": "SELECT d.id,tin.score(d.ctid) AS score FROM documents d CROSS JOIN eligibility_sets e WHERE e.set_name=%s AND d.search_text ==> %s AND e.members @> d.id ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.1",
+      "rare",
+      30
+    ]
+  },
+  {
+    "family": "enumeration",
+    "text": "rare",
+    "term": "rare",
+    "set": "random_0.1",
+    "k": 30,
+    "scoring": "default",
+    "headline": false,
+    "id": "q0099",
+    "table_rows": 10000,
+    "text_matches": 53,
+    "bitmap_members": 1000,
+    "eligible_matches": 8,
+    "sql": "WITH eligible AS MATERIALIZED (SELECT rb64_iterate(members) id FROM eligibility_sets WHERE set_name=%s) SELECT d.id,tin.score(d.ctid) AS score FROM eligible e JOIN documents d ON d.id=e.id WHERE d.search_text ==> %s ORDER BY tin.score(d.ctid) DESC LIMIT %s",
+    "params": [
+      "random_0.1",
+      "rare",
+      30
+    ]
+  }
+]

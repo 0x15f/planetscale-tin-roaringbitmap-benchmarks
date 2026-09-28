@@ -1,0 +1,985 @@
+{
+  "database_label": "dedicated PlanetScale benchmark / standard_20260926_154236",
+  "environment": {
+    "timestamp": "2026-09-26T15:33:52.349412+00:00",
+    "target": "user-designated non-production PlanetScale",
+    "version": [
+      [
+        "PostgreSQL 18.6 (Debian 18.6-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit"
+      ]
+    ],
+    "available_extensions": [
+      [
+        "roaringbitmap",
+        "1.2",
+        "1.2"
+      ],
+      [
+        "tin",
+        "1.0.3",
+        "1.0.3"
+      ]
+    ],
+    "extensions": [
+      [
+        "hypopg",
+        "1.4.3"
+      ],
+      [
+        "plpgsql",
+        "1.0"
+      ],
+      [
+        "roaringbitmap",
+        "1.2"
+      ],
+      [
+        "tin",
+        "1.0.3"
+      ]
+    ],
+    "settings": [
+      [
+        "effective_cache_size",
+        "1048576",
+        "8kB"
+      ],
+      [
+        "max_parallel_workers_per_gather",
+        "2",
+        null
+      ],
+      [
+        "random_page_cost",
+        "0.85",
+        null
+      ],
+      [
+        "seq_page_cost",
+        "0.85",
+        null
+      ],
+      [
+        "server_version",
+        "18.6 (Debian 18.6-1.pgdg12+2)",
+        null
+      ],
+      [
+        "shared_buffers",
+        "8576",
+        "8kB"
+      ],
+      [
+        "work_mem",
+        "26624",
+        "kB"
+      ]
+    ],
+    "tin_catalog": [
+      [
+        "tin",
+        "amhandler",
+        "internal"
+      ],
+      [
+        "tin",
+        "fsck",
+        "index regclass, heapcheck boolean"
+      ],
+      [
+        "tin",
+        "fsm_rebuild",
+        "index regclass"
+      ],
+      [
+        "tin",
+        "full_score",
+        "ctid tid"
+      ],
+      [
+        "tin",
+        "full_score",
+        "ctid tid, k1 real, b real"
+      ],
+      [
+        "tin",
+        "highlight",
+        "text text, begin_tag text, end_tag text, query text"
+      ],
+      [
+        "tin",
+        "highlight_ansi",
+        "text text, wrap_to integer, query text"
+      ],
+      [
+        "tin",
+        "max_score",
+        "ctid tid"
+      ],
+      [
+        "tin",
+        "maybe_quote",
+        "text text"
+      ],
+      [
+        "tin",
+        "merge",
+        "index regclass, target_segment_count integer, high_water_multiplier integer, max_fan_in integer, force boolean"
+      ],
+      [
+        "tin",
+        "promote",
+        "index regclass, extent_cap_bytes bigint"
+      ],
+      [
+        "tin",
+        "ql_parse",
+        "query text, surface boolean, tokenizer text, case_folding text, accent_folding text, long_tokens text, max_token_bytes integer, graphemes text, position_gaps text"
+      ],
+      [
+        "tin",
+        "score",
+        "ctid tid, dense_ratio real, k1 real, b real, term_add text[], term_replace text[]"
+      ],
+      [
+        "tin",
+        "score_inspect",
+        "index regclass, query text, dense_ratio real, term_add text[], term_replace text[]"
+      ],
+      [
+        "tin",
+        "score_support",
+        "request internal"
+      ],
+      [
+        "tin",
+        "segment_info",
+        "index regclass"
+      ],
+      [
+        "tin",
+        "tin_text_cmpfunc",
+        "lhs text, rhs text"
+      ],
+      [
+        "tin",
+        "tin_text_cmpfunc_indexed",
+        "lhs text, rhs text, index oid"
+      ],
+      [
+        "tin",
+        "tin_text_cmpfunc_indexed_support",
+        "request internal"
+      ],
+      [
+        "tin",
+        "tin_text_cmpfunc_support",
+        "request internal"
+      ],
+      [
+        "tin",
+        "tin_text_join",
+        "_planner_info internal, _operator_oid oid, _args internal, _join_type smallint, _special_join_info internal"
+      ],
+      [
+        "tin",
+        "tin_text_restrict",
+        "planner_info internal, _operator_oid oid, args internal, _var_relid integer"
+      ],
+      [
+        "tin",
+        "tin_text_term_array_cmpfunc_indexed",
+        "lhs text, rhs text[], use_or boolean, index oid"
+      ],
+      [
+        "tin",
+        "tokenize",
+        "text text, tokenizer text, case_folding text, accent_folding text, long_tokens text, max_token_bytes integer, graphemes text, position_gaps text"
+      ]
+    ],
+    "bitmap_types": [
+      [
+        "roaringbitmap"
+      ],
+      [
+        "roaringbitmap64"
+      ]
+    ],
+    "bitmap_functions": [
+      [
+        "public",
+        "rb64_add",
+        "bigint, roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_add",
+        "roaringbitmap64, bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_and",
+        "roaringbitmap64, roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_and_agg",
+        "roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_and_cardinality",
+        "roaringbitmap64, roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_and_cardinality_agg",
+        "roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_and_combine",
+        "internal, internal",
+        "internal"
+      ],
+      [
+        "public",
+        "rb64_and_trans",
+        "internal, roaringbitmap64",
+        "internal"
+      ],
+      [
+        "public",
+        "rb64_andnot",
+        "roaringbitmap64, roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_andnot_cardinality",
+        "roaringbitmap64, roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_build",
+        "bigint[]",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_build_agg",
+        "bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_build_trans",
+        "internal, bigint",
+        "internal"
+      ],
+      [
+        "public",
+        "rb64_cardinality",
+        "roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_cardinality_final",
+        "internal",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_clear",
+        "roaringbitmap64, range_start bigint, range_end bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_containedby",
+        "bigint, roaringbitmap64",
+        "boolean"
+      ],
+      [
+        "public",
+        "rb64_containedby",
+        "roaringbitmap64, roaringbitmap64",
+        "boolean"
+      ],
+      [
+        "public",
+        "rb64_contains",
+        "roaringbitmap64, bigint",
+        "boolean"
+      ],
+      [
+        "public",
+        "rb64_contains",
+        "roaringbitmap64, roaringbitmap64",
+        "boolean"
+      ],
+      [
+        "public",
+        "rb64_deserialize",
+        "bytea, internal",
+        "internal"
+      ],
+      [
+        "public",
+        "rb64_equals",
+        "roaringbitmap64, roaringbitmap64",
+        "boolean"
+      ],
+      [
+        "public",
+        "rb64_fill",
+        "roaringbitmap64, range_start bigint, range_end bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_final",
+        "internal",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_flip",
+        "roaringbitmap64, range_start bigint, range_end bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_from_roaringbitmap",
+        "roaringbitmap",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_index",
+        "roaringbitmap64, bigint",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_intersect",
+        "roaringbitmap64, roaringbitmap64",
+        "boolean"
+      ],
+      [
+        "public",
+        "rb64_is_empty",
+        "roaringbitmap64",
+        "boolean"
+      ],
+      [
+        "public",
+        "rb64_iterate",
+        "roaringbitmap64",
+        "SETOF bigint"
+      ],
+      [
+        "public",
+        "rb64_jaccard_dist",
+        "roaringbitmap64, roaringbitmap64",
+        "double precision"
+      ],
+      [
+        "public",
+        "rb64_max",
+        "roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_min",
+        "roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_not_equals",
+        "roaringbitmap64, roaringbitmap64",
+        "boolean"
+      ],
+      [
+        "public",
+        "rb64_or",
+        "roaringbitmap64, roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_or_agg",
+        "roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_or_cardinality",
+        "roaringbitmap64, roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_or_cardinality_agg",
+        "roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_or_combine",
+        "internal, internal",
+        "internal"
+      ],
+      [
+        "public",
+        "rb64_or_trans",
+        "internal, roaringbitmap64",
+        "internal"
+      ],
+      [
+        "public",
+        "rb64_range",
+        "roaringbitmap64, range_start bigint, range_end bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_range_cardinality",
+        "roaringbitmap64, range_start bigint, range_end bigint",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_rank",
+        "roaringbitmap64, bigint",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_remove",
+        "roaringbitmap64, bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_runoptimize",
+        "roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_select",
+        "roaringbitmap64, bitset_limit bigint, bitset_offset bigint, reverse boolean, range_start bigint, range_end bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_serialize",
+        "internal",
+        "bytea"
+      ],
+      [
+        "public",
+        "rb64_shiftleft",
+        "roaringbitmap64, bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_shiftright",
+        "roaringbitmap64, bigint",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_to_array",
+        "roaringbitmap64",
+        "bigint[]"
+      ],
+      [
+        "public",
+        "rb64_to_roaringbitmap",
+        "roaringbitmap64",
+        "roaringbitmap"
+      ],
+      [
+        "public",
+        "rb64_xor",
+        "roaringbitmap64, roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_xor_agg",
+        "roaringbitmap64",
+        "roaringbitmap64"
+      ],
+      [
+        "public",
+        "rb64_xor_cardinality",
+        "roaringbitmap64, roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_xor_cardinality_agg",
+        "roaringbitmap64",
+        "bigint"
+      ],
+      [
+        "public",
+        "rb64_xor_combine",
+        "internal, internal",
+        "internal"
+      ],
+      [
+        "public",
+        "rb64_xor_trans",
+        "internal, roaringbitmap64",
+        "internal"
+      ]
+    ],
+    "database_region": "us-east-1",
+    "cluster": "M-160 x86-64",
+    "vcpus": 2,
+    "memory_gb": 16,
+    "replicas": 2,
+    "metadata_source": "user report",
+    "client_region": "unknown",
+    "connection": "provided endpoint; port 6432; explicit transactions pin sessions; one persistent client",
+    "tls": "verify-full with certifi",
+    "database_role": "dedicated benchmark database, branch label production; confirmed by user",
+    "session_settings": {
+      "effective_cache_size": "1048576",
+      "effective_io_concurrency": "32",
+      "jit": "off",
+      "max_parallel_workers": "4",
+      "max_parallel_workers_per_gather": "2",
+      "plan_cache_mode": "auto",
+      "random_page_cost": "0.85",
+      "search_path": "standard_20260926_154236, public",
+      "seq_page_cost": "0.85",
+      "server_version": "18.6 (Debian 18.6-1.pgdg12+2)",
+      "shared_buffers": "262144",
+      "statement_timeout": "60000",
+      "tin.build_io_concurrency": "0",
+      "tin.debug_disable_count_pushdown": "off",
+      "tin.debug_disable_index_probe": "off",
+      "tin.debug_force_boolean_family": "Auto",
+      "tin.debug_force_conjunction_mode": "Auto",
+      "tin.debug_force_multi_index_drive": "Auto",
+      "tin.debug_force_parallel": "off",
+      "tin.debug_force_topk": "Auto",
+      "tin.debug_force_visibility": "Auto",
+      "tin.enable_custom_scan": "on",
+      "tin.index_maintenance_mode": "background",
+      "tin.maintenance_jobs_per_db": "0",
+      "tin.rss_baseline": "256",
+      "tin.track_page_reuse_stats": "off",
+      "work_mem": "26624"
+    },
+    "select_1_rtt_ms": [
+      24.025875,
+      27.282792,
+      62.493167,
+      73.587375,
+      37.325875,
+      24.405958,
+      20.42725,
+      19.932042,
+      22.672625,
+      20.857834,
+      18.202416,
+      15.544417,
+      15.6695,
+      15.180625,
+      15.0075,
+      20.132083,
+      53.111583,
+      18.200791,
+      15.92475,
+      17.833917,
+      30.846875,
+      16.228583,
+      21.525875,
+      14.311875,
+      15.011375,
+      16.352084,
+      21.126292,
+      38.202666,
+      23.336792,
+      20.692916
+    ]
+  },
+  "dataset_sha256": "243ec79c5911d95798f4581b2ae64799e7a08f420d617e6cf0ed7d0d7d6c1f9a",
+  "session_settings": {
+    "effective_cache_size": "1048576",
+    "effective_io_concurrency": "32",
+    "jit": "off",
+    "max_parallel_workers": "4",
+    "max_parallel_workers_per_gather": "2",
+    "plan_cache_mode": "auto",
+    "random_page_cost": "0.85",
+    "search_path": "standard_20260926_154236, public",
+    "seq_page_cost": "0.85",
+    "server_version": "18.6 (Debian 18.6-1.pgdg12+2)",
+    "shared_buffers": "262144",
+    "statement_timeout": "60000",
+    "tin.build_io_concurrency": "0",
+    "tin.debug_disable_count_pushdown": "off",
+    "tin.debug_disable_index_probe": "off",
+    "tin.debug_force_boolean_family": "Auto",
+    "tin.debug_force_conjunction_mode": "Auto",
+    "tin.debug_force_multi_index_drive": "Auto",
+    "tin.debug_force_parallel": "off",
+    "tin.debug_force_topk": "Auto",
+    "tin.debug_force_visibility": "Auto",
+    "tin.enable_custom_scan": "on",
+    "tin.index_maintenance_mode": "background",
+    "tin.maintenance_jobs_per_db": "0",
+    "tin.rss_baseline": "256",
+    "tin.track_page_reuse_stats": "off",
+    "work_mem": "26624"
+  },
+  "query_id": "q0009",
+  "timestamp": "2026-09-26T18:21:56.252770+00:00",
+  "sql": "SELECT d.id,tin.full_score(d.ctid) AS score FROM documents d WHERE d.search_text ==> %s AND d.id < %s ORDER BY tin.full_score(d.ctid) DESC LIMIT %s",
+  "params": [
+    "common",
+    1099511677776,
+    30
+  ],
+  "explain_options": [
+    "FORMAT JSON",
+    "ANALYZE, BUFFERS, SETTINGS, FORMAT JSON"
+  ],
+  "estimated": [
+    {
+      "Plan": {
+        "Node Type": "Limit",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 449.91,
+        "Total Cost": 475.55,
+        "Plan Rows": 30,
+        "Plan Width": 12,
+        "Disabled": false,
+        "Plans": [
+          {
+            "Node Type": "Custom Scan",
+            "Parent Relationship": "Outer",
+            "Custom Plan Provider": "Projector",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 449.91,
+            "Total Cost": 475.55,
+            "Plan Rows": 30,
+            "Plan Width": 12,
+            "Disabled": false,
+            "Predicted Work": {
+              "Rows": 30.0,
+              "Mutable Rows": 0.0,
+              "Posting Pages": 0.0,
+              "Position Pages": 0.0,
+              "Full Posting Pages": 0.0,
+              "Doclen Pages": 0.0,
+              "Candidate Blocks": 0.0,
+              "Exact Batches": 0.0,
+              "Heap Pages": 29.81,
+              "Filter TIDs": 0.0,
+              "Hash Rows": 0.0,
+              "Sort Rows": 0.0,
+              "Startup Pages": 0.0,
+              "Driver Rows": 0.0
+            },
+            "Plans": [
+              {
+                "Node Type": "Custom Scan",
+                "Parent Relationship": "child",
+                "Custom Plan Provider": "Projector",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 449.91,
+                "Total Cost": 449.91,
+                "Plan Rows": 30,
+                "Plan Width": 12,
+                "Disabled": false,
+                "Filter": "(id < '1099511677776'::bigint)",
+                "Purpose": "Branch Verification",
+                "Predicted Work": {
+                  "Rows": 30.0,
+                  "Mutable Rows": 0.0,
+                  "Posting Pages": 0.0,
+                  "Position Pages": 0.0,
+                  "Full Posting Pages": 0.0,
+                  "Doclen Pages": 0.0,
+                  "Candidate Blocks": 0.0,
+                  "Exact Batches": 0.0,
+                  "Heap Pages": 58.83,
+                  "Filter TIDs": 0.0,
+                  "Hash Rows": 0.0,
+                  "Sort Rows": 0.0,
+                  "Startup Pages": 0.0,
+                  "Driver Rows": 0.0
+                },
+                "Plans": [
+                  {
+                    "Node Type": "Custom Scan",
+                    "Parent Relationship": "child",
+                    "Custom Plan Provider": "Text Search Scan",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "documents",
+                    "Alias": "d",
+                    "Startup Cost": 398.86,
+                    "Total Cost": 398.86,
+                    "Plan Rows": 30,
+                    "Plan Width": 12,
+                    "Disabled": false,
+                    "Index": "documents_search_tin",
+                    "Query": "common",
+                    "Predicted Work": {
+                      "Rows": 79835.0,
+                      "Mutable Rows": 0.0,
+                      "Posting Pages": 14.0,
+                      "Position Pages": 0.0,
+                      "Full Posting Pages": 14.0,
+                      "Doclen Pages": 0.0,
+                      "Candidate Blocks": 0.0,
+                      "Exact Batches": 0.0,
+                      "Heap Pages": 0.0,
+                      "Filter TIDs": 0.0,
+                      "Hash Rows": 0.0,
+                      "Sort Rows": 0.0,
+                      "Startup Pages": 2.0,
+                      "Driver Rows": 79835.0
+                    },
+                    "Top K": "30",
+                    "Candidate Filter": "Parent Projector"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "analyzed": [
+    {
+      "Plan": {
+        "Node Type": "Limit",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Startup Cost": 449.91,
+        "Total Cost": 475.55,
+        "Plan Rows": 30,
+        "Plan Width": 12,
+        "Actual Startup Time": 0.15,
+        "Actual Total Time": 0.183,
+        "Actual Rows": 30.0,
+        "Actual Loops": 1,
+        "Disabled": false,
+        "Shared Hit Blocks": 74,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0,
+        "Plans": [
+          {
+            "Node Type": "Custom Scan",
+            "Parent Relationship": "Outer",
+            "Custom Plan Provider": "Projector",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 449.91,
+            "Total Cost": 475.55,
+            "Plan Rows": 30,
+            "Plan Width": 12,
+            "Actual Startup Time": 0.149,
+            "Actual Total Time": 0.179,
+            "Actual Rows": 30.0,
+            "Actual Loops": 1,
+            "Disabled": false,
+            "Predicted Work": {
+              "Rows": 30.0,
+              "Mutable Rows": 0.0,
+              "Posting Pages": 0.0,
+              "Position Pages": 0.0,
+              "Full Posting Pages": 0.0,
+              "Doclen Pages": 0.0,
+              "Candidate Blocks": 0.0,
+              "Exact Batches": 0.0,
+              "Heap Pages": 29.81,
+              "Filter TIDs": 0.0,
+              "Hash Rows": 0.0,
+              "Sort Rows": 0.0,
+              "Startup Pages": 0.0,
+              "Driver Rows": 0.0
+            },
+            "Shared Hit Blocks": 74,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Custom Scan",
+                "Parent Relationship": "child",
+                "Custom Plan Provider": "Projector",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 449.91,
+                "Total Cost": 449.91,
+                "Plan Rows": 30,
+                "Plan Width": 12,
+                "Actual Startup Time": 0.147,
+                "Actual Total Time": 0.162,
+                "Actual Rows": 30.0,
+                "Actual Loops": 1,
+                "Disabled": false,
+                "Filter": "(id < '1099511677776'::bigint)",
+                "Rows Removed by Filter": 0,
+                "Purpose": "Branch Verification",
+                "Predicted Work": {
+                  "Rows": 30.0,
+                  "Mutable Rows": 0.0,
+                  "Posting Pages": 0.0,
+                  "Position Pages": 0.0,
+                  "Full Posting Pages": 0.0,
+                  "Doclen Pages": 0.0,
+                  "Candidate Blocks": 0.0,
+                  "Exact Batches": 0.0,
+                  "Heap Pages": 58.83,
+                  "Filter TIDs": 0.0,
+                  "Hash Rows": 0.0,
+                  "Sort Rows": 0.0,
+                  "Startup Pages": 0.0,
+                  "Driver Rows": 0.0
+                },
+                "Shared Hit Blocks": 46,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Custom Scan",
+                    "Parent Relationship": "child",
+                    "Custom Plan Provider": "Text Search Scan",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "documents",
+                    "Alias": "d",
+                    "Startup Cost": 398.86,
+                    "Total Cost": 398.86,
+                    "Plan Rows": 30,
+                    "Plan Width": 12,
+                    "Actual Startup Time": 0.146,
+                    "Actual Total Time": 0.149,
+                    "Actual Rows": 30.0,
+                    "Actual Loops": 1,
+                    "Disabled": false,
+                    "Index": "documents_search_tin",
+                    "Query": "common",
+                    "Predicted Work": {
+                      "Rows": 79835.0,
+                      "Mutable Rows": 0.0,
+                      "Posting Pages": 14.0,
+                      "Position Pages": 0.0,
+                      "Full Posting Pages": 14.0,
+                      "Doclen Pages": 0.0,
+                      "Candidate Blocks": 0.0,
+                      "Exact Batches": 0.0,
+                      "Heap Pages": 0.0,
+                      "Filter TIDs": 0.0,
+                      "Hash Rows": 0.0,
+                      "Sort Rows": 0.0,
+                      "Startup Pages": 2.0,
+                      "Driver Rows": 79835.0
+                    },
+                    "Top K": "30",
+                    "Candidate Filter": "Parent Projector",
+                    "Page Touches": {
+                      "Total": 14,
+                      "Approx MiB": 0.1,
+                      "Metadata": 4,
+                      "Term Map": 3,
+                      "Postings Footer": 2,
+                      "Postings Payload": 1,
+                      "Postings TF Tail": 2,
+                      "DL Sidecar": 1,
+                      "Liveness Bitmap": 1
+                    },
+                    "Shared Hit Blocks": 18,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "Settings": {
+        "effective_cache_size": "8GB",
+        "effective_io_concurrency": "32",
+        "jit": "off",
+        "maintenance_io_concurrency": "32",
+        "max_parallel_workers": "4",
+        "random_page_cost": "0.85",
+        "seq_page_cost": "0.85",
+        "work_mem": "26MB",
+        "search_path": "standard_20260926_154236, public"
+      },
+      "Planning": {
+        "Shared Hit Blocks": 19,
+        "Shared Read Blocks": 0,
+        "Shared Dirtied Blocks": 0,
+        "Shared Written Blocks": 0,
+        "Local Hit Blocks": 0,
+        "Local Read Blocks": 0,
+        "Local Dirtied Blocks": 0,
+        "Local Written Blocks": 0,
+        "Temp Read Blocks": 0,
+        "Temp Written Blocks": 0
+      },
+      "Planning Time": 0.296,
+      "Triggers": [],
+      "Execution Time": 0.295
+    }
+  ],
+  "classification": "P5"
+}
